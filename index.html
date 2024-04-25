@@ -13,7 +13,7 @@
 
     <div class="hero">
         <div style="margin-bottom: 30px">
-            <h1 class="hero-title">Transfem communication</h1>
+            <h1 class="hero-title">Encyrpt Language</h1>
             <h2>What the fuck is this?</h2>
             <p>A shitty idea I got that il basically a base 8 encoder with cuter encoding. It's not really a language,
                 but
@@ -51,7 +51,7 @@
     <script>
 
         async function encode() {
-            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/ryuxyro.github.io/main/js/secret_lib_v1.js");
+            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/ryuxyro.github.io/main/_src/js/secret_lib_v1.js");
             let lib = await res.text();
             eval(lib);
             let input = document.getElementById("input").value;
@@ -61,7 +61,7 @@
         }
 
         async function decode() {
-            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/ryuxyro.github.io/main/js/secret_lib_v1.js");
+            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/ryuxyro.github.io/main/_src/js/secret_lib_v1.js");
             let lib = await res.text();
             eval(lib);
             let input = document.getElementById("input").value;
