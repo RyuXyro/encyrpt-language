@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Transfem communication</title>
+
+    <link rel="stylesheet" href="./Transfem communication_files/style.css">
+</head>
+
+<body>
+
+    <div class="hero">
+        <div style="margin-bottom: 30px">
+            <h1 class="hero-title">Transfem communication</h1>
+            <h2>What the fuck is this?</h2>
+            <p>A shitty idea I got that il basically a base 8 encoder with cuter encoding. It's not really a language,
+                but
+                it's a way to communicate with other transfems <i>(trust me)</i>.</p>
+            <p>It was meant to be a rust lib for <a class="link" href="https://github.com/Imbwbl">Bwbl</a> and now it's
+                also
+                a JS lib.</p>
+
+            <h2>Just why ??</h2>
+            <p>Because you know, today's protocols are really boring, but now with this insane lib and site you can just
+                encode bytes and decode them back and I think that every optimized protocol should have that.</p>
+
+            <h2>How it works ?</h2>
+            <p>Type things in the left area and then press the magic encode button and boom your message can be
+                understood
+                by every transfem in the right side</p>
+            <p>If you're not a transfem and you can't understand an encoded message you can do the same process with the
+                encoded message the left then press the decode button and bim badaboom decoded message to the right</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <textarea id="input" cols="30" rows="10"></textarea>
+        <!--a style="font-size: 2.5em">→</a-->
+        <textarea disabled="" id="output" cols="30" rows="10"></textarea>
+    </div>
+
+    <br>
+    <div class="container">
+        <button onclick="encode()" class="button">Encode</button>
+        <button onclick="decode()" class="button">Decode</button>
+    </div>
+
+
+    <script>
+
+        async function encode() {
+            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/ryuxyro.github.io/main/js/secret_lib_v1.js");
+            let lib = await res.text();
+            eval(lib);
+            let input = document.getElementById("input").value;
+            let output = document.getElementById("output");
+            let encoded = encodeStr(input);
+            output.value = encoded;
+        }
+
+        async function decode() {
+            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/ryuxyro.github.io/main/js/secret_lib_v1.js");
+            let lib = await res.text();
+            eval(lib);
+            let input = document.getElementById("input").value;
+            let output = document.getElementById("output");
+            output.value = decodeStr(input);
+        }
+    </script>
+    <script language=JavaScript>
+        var message = "Uhh Disable";
+        var message2 = "Loll Disable";
+        var message3 = "Hahahahaha";
+        ///////////////////////////////////
+        function clickIE4() {
+            if (event.button == 2) {
+                alert(message);
+                alert(message2);
+                alert(message3);
+                return false;
+            }
+        }
+        function clickNS4(e) {
+            if (document.layers || document.getElementById && !document.all) {
+                if (e.which == 2 || e.which == 3) {
+                    alert(message);
+                    alert(message2);
+                    alert(message3);
+                    return false;
+                }
+            }
+        }
+        if (document.layers) {
+            document.captureEvents(Event.MOUSEDOWN);
+            document.onmousedown = clickNS4;
+        }
+        else if (document.all && !document.getElementById) {
+            document.onmousedown = clickIE4;
+        }
+        document.oncontextmenu = new Function("alert(message);alert(message2);alert(message3);return false")
+    </script>
+
+</body>
+
+</html>
