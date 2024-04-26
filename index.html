@@ -51,7 +51,7 @@
     <script>
 
         async function encode() {
-            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/ryuxyro.github.io/main/_src/js/secret_lib_v1.js");
+            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/RyuXyro/main/_src/src_lib.js");
             let lib = await res.text();
             eval(lib);
             let input = document.getElementById("input").value;
@@ -61,7 +61,7 @@
         }
 
         async function decode() {
-            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/ryuxyro.github.io/main/_src/js/secret_lib_v1.js");
+            let res = await fetch("https://raw.githubusercontent.com/RyuXyro/RyuXyro/main/_src/src_lib.js");
             let lib = await res.text();
             eval(lib);
             let input = document.getElementById("input").value;
